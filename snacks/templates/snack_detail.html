@@ -4,4 +4,6 @@
 <h1>{{snack.title}}</h1>
 <p>purchaser: {{snack.purchaser}}</p>
 <p>description: {{snack.description}}</p>
+
+<a href="{% url 'snack_update' snack.id %}">update</a>
 {% endblock content %}

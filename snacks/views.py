@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .models import Snack
 # Create your views here.
 
@@ -19,3 +20,9 @@ class SnackCreateView(CreateView):
     template_name = 'create_snack.html'
     model = Snack
     fields = ['title', 'purchaser', 'description']
+
+
+class SnackUpdateView(UpdateView):
+    template_name = 'snack_update.html'
+    model = Snack
+    fields = "__all__"
