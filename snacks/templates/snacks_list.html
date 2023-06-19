@@ -3,7 +3,7 @@
 {% block content %}
 <ul>
     {% for snack in snacks %}
-    <li><a href="">{{snack.title}}</a></li>
+    <li><a href="{%url 'snack_detail' snack.id %}">{{snack.title}}</a></li>
     {% endfor %}
 </ul>
 {% endblock content %}
