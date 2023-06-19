@@ -10,11 +10,11 @@
 pip install -r requirements.txt
 ```
 
-## How to initialize/run your application
-
 ```bash
 python manage.py migrate
 ```
+
+## How to initialize/run your application
 
 ```bash
 python manage.py runserver
