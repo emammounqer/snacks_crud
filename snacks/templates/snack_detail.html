@@ -6,4 +6,6 @@
 <p>description: {{snack.description}}</p>
 
 <a href="{% url 'snack_update' snack.id %}">update</a>
+<a href="{% url 'snack_delete' snack.id %}">delete</a>
+
 {% endblock content %}

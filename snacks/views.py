@@ -1,7 +1,6 @@
-from django.shortcuts import render
-from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Snack
+from django.urls import reverse_lazy, reverse
 # Create your views here.
 
 
@@ -26,3 +25,14 @@ class SnackUpdateView(UpdateView):
     template_name = 'snack_update.html'
     model = Snack
     fields = "__all__"
+
+    success_url = reverse_lazy('snack_detail')
+
+    def get_success_url(self):
+        return reverse_lazy('snack_detail', kwargs={'pk': self.object.pk})
+
+
+class SnackDeleteView(DeleteView):
+    template_name = 'snack_delete.html'
+    model = Snack
+    success_url = reverse_lazy('snack_list')
